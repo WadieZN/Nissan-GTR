@@ -10,16 +10,16 @@ export default function Hero() {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobileView(window.innerWidth <= 1100);
+            setIsMobileView(window.innerWidth <= 800);
         };
 
         window.addEventListener('resize', handleResize);
-        handleResize(); // Call it initially
+        handleResize(); 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const handleIconClick = () => {
-        document.querySelectorAll('#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4').forEach(icon => {
+        document.querySelectorAll('#nav-icon3').forEach(icon => {
             icon.classList.toggle('open');
         });
     };
@@ -36,7 +36,7 @@ export default function Hero() {
                 </div>
                 {isMobileView ? (
                     <>
-                        <nav style={{ display: isMenuOpen ? 'block' : 'none' }}>
+                        <nav style={{ top: isMenuOpen ? '20%' : '-50%' }}>
                             <ul>
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">About</a></li>

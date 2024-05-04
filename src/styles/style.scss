@@ -8,6 +8,7 @@ $third-color: #fff;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html{
@@ -295,14 +296,15 @@ footer{
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
 
 #nav-icon3 {
     width: 60px;
-    height: 45px;
-    position: absolute;
+    height: 40px;
+    position: fixed;
     top: 25px;
     right: 25px;
+    z-index: 6;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -312,41 +314,40 @@ footer{
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
-  }
-  
-  #nav-icon3 span {
-    display: block;
-    position: absolute;
-    height: 9px;
-    width: 100%;
-    background: $first-color;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
-    transition: .25s ease-in-out;
-  }
+    span {
+        display: block;
+        position: absolute;
+        height: 6px;
+        width: 100%;
+        background: $first-color;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+      }
 
-#nav-icon3 span:nth-child(1) {
-    top: 0px;
-  }
-  
-  #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
-    top: 18px;
-  }
-  
-  #nav-icon3 span:nth-child(4) {
-    top: 36px;
+      span:nth-child(1) {
+        top: 0px;
+      }
+
+      span:nth-child(2), span:nth-child(3) {
+        top: 16px;
+      }
+
+      span:nth-child(4) {
+        top: 32px;
+      }
   }
   
   #nav-icon3.open span:nth-child(1) {
-    top: 18px;
+    top: 16px;
     width: 0%;
     left: 50%;
   }
@@ -366,20 +367,21 @@ footer{
   }
   
   #nav-icon3.open span:nth-child(4) {
-    top: 18px;
+    top: 16px;
     width: 0%;
     left: 50%;
   }
 
     nav{
-        display: none;
         background: #000;
-        width: 100vw;
-        padding: 100px 25px 25px 25px;
-        position: absolute;
+        width: 110vw;
+        padding: 130px 25px 25px 25px;
+        position: fixed;
         top: 20%;
         left: 50%;
         transform: translate(-50%, -50%);
+        transition: .5s;
+        z-index: 5;
        ul{
         flex-direction: column;
         gap: 15px;
@@ -401,6 +403,13 @@ footer{
         width: 100%;
         border-radius: 0;
        }
+    }
+
+    .logo{
+        position: fixed;
+        top: 15px;
+        left: 25px;
+        z-index: 6;
     }
 
     .intro{
